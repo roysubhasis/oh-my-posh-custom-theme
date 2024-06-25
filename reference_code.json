@@ -1,0 +1,136 @@
+	{
+		   "background": "#6495ED",			
+           "foreground": "#ffffff",          
+	 	   "properties": {
+			 "always_enabled": true
+			},
+		  
+		   "style": "diamond",
+           "leading_diamond": "\ue0b2",
+           "template": " {{ .Icon }} ",
+
+		   "template": " \udb80\udf5b {{ round .PhysicalPercentUsed .Precision }}% ({{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1073741824.0) }}/{{ (div .PhysicalTotalMemory 1073741824.0) }}GB)",
+           "type": "sysinfo"
+        },
+		
+ 
+ 
+	{
+          "background": "#f36943",
+          "background_templates": [
+            "{{if eq \"Charging\" .State.String}}#b8e994{{end}}",
+            "{{if eq \"Discharging\" .State.String}}#fff34e{{end}}",
+            "{{if eq \"Full\" .State.String}}#33DD2D{{end}}"
+          ],
+          "foreground": "#262626",
+          "invert_powerline": true,
+          "powerline_symbol": "\ue0b2",
+          "properties": {
+            "charged_icon": "\uf240 ",
+            "charging_icon": "\uf1e6 ",
+            "discharging_icon": "\ue234 "
+          },
+          "style": "powerline",
+          "template": " {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }}\uf295 ",
+          "type": "battery"
+        },
+		
+ 
+       {
+          "background": "#40c4ff",
+          "foreground": "#ffffff",
+          "invert_powerline": true,
+          "leading_diamond": "\ue0b2",
+          "properties": {
+            "time_format": "_2,15:04"
+          },
+          "style": "diamond",
+          "template": " \uf073 {{ .CurrentDate | date .Format }} ",
+          "trailing_diamond": "\ue0b4",
+          "type": "time"
+        },
+		
+		
+		{
+          "background": "#d75f00",
+          "foreground": "#f2f3f8",
+          "properties": {
+            "time_format": "3:04:05 PM"
+          },
+          "invert_powerline": true,
+          "style": "diamond",
+          "template": " \ue641 {{ .CurrentDate | date .Format }} ",
+          "trailing_diamond": "\ue0b0",
+          "type": "time"
+        },
+		
+		
+		{
+          "background": "#d75f00",
+          "foreground": "#f2f3f8",
+          "properties": {
+            "time_format": "13:04:05"
+          },
+          "invert_powerline": true,
+          "style": "diamond",
+          "template": " \ue641 {{ .CurrentDate | date .Format }} ",
+          "trailing_diamond": "\ue0b0",
+          "type": "time"
+        },
+		
+		
+		  {
+          "background": "#2e9599",
+          "foreground": "#111111",
+          "invert_powerline": true,
+          "leading_diamond": "\ue0b2",
+          "style": "diamond",
+          "template": " \ue641 {{ .CurrentDate | date .Format }} ",
+          "trailing_diamond": "\ue0b4",
+          "type": "time"
+        },
+		
+		
+		   {
+          "background": "#575656",
+          "foreground": "#D6DEEB",
+          "properties": {
+            "style": "roundrock",
+            "threshold": 0
+          },
+          "style": "diamond",
+          "template": " \uf252 {{ .FormattedMs }} ",
+          "trailing_diamond": "\ue0b4",
+          "type": "executiontime"
+        },
+		
+		
+		
+		{
+            "foreground": "#BBC4B9",
+            "properties": {
+              "time_format": "Monday <#fff>at</> 3:04 PM"
+            },
+            "style": "diamond",
+            "template": " {{ .CurrentDate | date .Format }} ",
+            "type": "time"
+          },
+		  
+		  
+		  
+		{
+          "background": "#d75f00",
+          "foreground": "#f2f3f8",
+          "properties": {
+			 "time_format": "_2 Jan, 3:04:05 PM"			 
+          },
+          "invert_powerline": true,
+          "style": "diamond",
+          "template": " \uf5ef{{ .CurrentDate | date .Format }} ",
+          "trailing_diamond": "\ue0b0",
+          "type": "time"
+        }
+		  
+		  
+		  
+		
